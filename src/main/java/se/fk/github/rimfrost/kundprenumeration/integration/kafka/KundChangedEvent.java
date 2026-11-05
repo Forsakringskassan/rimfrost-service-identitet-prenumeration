@@ -1,6 +1,7 @@
 package se.fk.github.rimfrost.kundprenumeration.integration.kafka;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import se.fk.rimfrost.kund.prenumeration.Idtyp;
 
 /**
@@ -26,6 +27,7 @@ public class KundChangedEvent
     * @param prenumerationId the client-chosen ID from the original subscribe request
     * @param kund            identifies the customer whose data changed
     */
+   @SuppressFBWarnings("EI_EXPOSE_REP2")
    public KundChangedEvent(String prenumerationId, Idtyp kund)
    {
       this.prenumerationId = prenumerationId;
@@ -38,7 +40,10 @@ public class KundChangedEvent
       return prenumerationId;
    }
 
-   /** @return the customer identifier */
+   /**
+    * @return the customer identifier
+    */
+   @SuppressFBWarnings("EI_EXPOSE_REP")
    public Idtyp getKund()
    {
       return kund;
