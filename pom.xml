@@ -36,12 +36,12 @@
     <dependency>
       <groupId>se.fk.rimfrost.kund.prenumeration</groupId>
       <artifactId>rimfrost-service-kund-prenumeration-asyncapi</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
+      <version>0.0.1</version>
     </dependency>
     <dependency>
       <groupId>se.fk.rimfrost.service.kund.prenumeration.test</groupId>
       <artifactId>rimfrost-service-kund-prenumeration-test-openapi-jaxrs-spec</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.0.1</version>
     </dependency>
     <dependency>
       <groupId>io.smallrye.reactive</groupId>
