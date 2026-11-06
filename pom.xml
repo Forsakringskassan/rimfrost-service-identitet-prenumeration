@@ -34,13 +34,18 @@
       <artifactId>quarkus-rest-jackson</artifactId>
     </dependency>
     <dependency>
-      <groupId>se.fk.rimfrost.kund.prenumeration</groupId>
-      <artifactId>rimfrost-service-kund-prenumeration-asyncapi</artifactId>
+      <groupId>se.fk.rimfrost.service.identitet.prenumeration</groupId>
+      <artifactId>rimfrost-service-identitet-prenumeration-openapi-jaxrs-spec</artifactId>
       <version>0.0.1</version>
     </dependency>
     <dependency>
-      <groupId>se.fk.rimfrost.service.kund.prenumeration.test</groupId>
-      <artifactId>rimfrost-service-kund-prenumeration-test-openapi-jaxrs-spec</artifactId>
+      <groupId>se.fk.rimfrost.identitet.uppdaterad</groupId>
+      <artifactId>rimfrost-identitet-uppdaterad-asyncapi</artifactId>
+      <version>0.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>se.fk.rimfrost.service.identitet.prenumeration.test</groupId>
+      <artifactId>rimfrost-service-identitet-prenumeration-test-openapi-jaxrs-spec</artifactId>
       <version>0.0.1</version>
     </dependency>
     <dependency>

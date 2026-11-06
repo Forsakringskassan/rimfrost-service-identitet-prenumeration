@@ -1,13 +1,12 @@
 package se.fk.github.rimfrost.identitetprenumeration.application;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * In-memory store for active prenumerationer.
- * This is a mock/test service — subscriptions are not persisted across restarts.
+ * This is a test/demo service — subscriptions are not persisted across restarts.
  */
 @ApplicationScoped
 public class PrenumerationStore
@@ -17,6 +16,7 @@ public class PrenumerationStore
 
    /**
     * Adds or replaces the prenumeration identified by its prenumerationId (FR-01.5).
+    * Full replace — all fields are overwritten if the ID already exists.
     *
     * @param prenumeration the prenumeration to store
     */
@@ -26,32 +26,28 @@ public class PrenumerationStore
    }
 
    /**
-    * Removes the prenumeration with the given ID. Silent no-op if not found (FR-01.6).
+    * Removes the prenumeration with the given ID (FR-01.6).
     *
     * @param prenumerationId the client-chosen ID to remove
+    * @return true if a prenumeration was removed, false if no match was found
     */
-   public void deleteByPrenumerationId(String prenumerationId)
+   public boolean deleteByPrenumerationId(String prenumerationId)
    {
-      store.remove(prenumerationId);
+      return store.remove(prenumerationId) != null;
    }
 
    /**
-    * Returns all prenumerationer matching the given identifier type and value.
+    * Returns all prenumerationer where any of the stored identiteter matches the given typId and varde.
     *
     * @param typId identifier type
     * @param varde identifier value
     * @return matching prenumerationer, possibly empty
     */
-   public List<Prenumeration> findByTypIdAndVarde(String typId, String varde)
+   public List<Prenumeration> findByIdentitet(String typId, String varde)
    {
-      List<Prenumeration> result = new ArrayList<>();
-      for (Prenumeration p : store.values())
-      {
-         if (typId.equals(p.typId()) && varde.equals(p.varde()))
-         {
-            result.add(p);
-         }
-      }
-      return result;
+      return store.values().stream()
+            .filter(p -> p.identiteter().stream()
+                  .anyMatch(id -> typId.equals(id.getTypId()) && varde.equals(id.getVarde())))
+            .toList();
    }
 }
