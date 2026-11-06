@@ -1,8 +1,10 @@
 package se.fk.github.rimfrost.identitetprenumeration.presentation.rest;
 
-import io.vertx.ext.web.RoutingContext;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.fk.github.rimfrost.identitetprenumeration.application.Identitet;
@@ -18,6 +20,7 @@ import java.util.UUID;
  * REST controller for prenumeration registration and cancellation (FR-01).
  */
 @ApplicationScoped
+@Path("/")
 public class PrenumerationController implements PrenumerationControllerApi
 {
 
@@ -26,12 +29,11 @@ public class PrenumerationController implements PrenumerationControllerApi
    @Inject
    PrenumerationStore prenumerationStore;
 
-   @Inject
-   RoutingContext routingContext;
-
    /**
     * Registers or replaces a prenumeration (FR-01.1, FR-01.5).
     * Returns HTTP 201 Created on success.
+    * Throws WebApplicationException(201) because the generated interface returns void,
+    * and JAX-RS defaults void to 204.
     *
     * @param createPrenumerationRequest the subscription details
     */
@@ -39,9 +41,8 @@ public class PrenumerationController implements PrenumerationControllerApi
    public void createPrenumeration(CreatePrenumerationRequest createPrenumerationRequest)
    {
       log.info("createPrenumeration: prenumerationId={}", createPrenumerationRequest.getPrenumerationId());
-      var prenumeration = map(createPrenumerationRequest);
-      prenumerationStore.upsert(prenumeration);
-      routingContext.response().setStatusCode(201);
+      prenumerationStore.upsert(map(createPrenumerationRequest));
+      throw new WebApplicationException(Response.status(Response.Status.CREATED).build());
    }
 
    /**

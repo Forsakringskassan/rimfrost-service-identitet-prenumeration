@@ -2,6 +2,7 @@ package se.fk.github.rimfrost.identitetprenumeration.presentation.rest;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.Path;
 import se.fk.github.rimfrost.identitetprenumeration.application.IdentitetUppdateradService;
 import se.fk.rimfrost.service.identitet.prenumeration.test.jaxrsspec.controllers.generatedsource.TestControllerApi;
 import se.fk.rimfrost.service.identitet.prenumeration.test.jaxrsspec.controllers.generatedsource.model.TriggerRequest;
@@ -11,6 +12,7 @@ import se.fk.rimfrost.service.identitet.prenumeration.test.jaxrsspec.controllers
  * Only intended for use in test and demo environments (FR-03).
  */
 @ApplicationScoped
+@Path("/")
 public class TestController implements TestControllerApi
 {
 
