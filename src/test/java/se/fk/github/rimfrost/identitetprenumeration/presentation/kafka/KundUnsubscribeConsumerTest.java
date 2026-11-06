@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.presentation.kafka;
+package se.fk.github.rimfrost.identitetprenumeration.presentation.kafka;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,9 +14,9 @@ import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import se.fk.github.rimfrost.kundprenumeration.application.Prenumeration;
-import se.fk.github.rimfrost.kundprenumeration.application.PrenumerationStore;
-import se.fk.github.rimfrost.kundprenumeration.integration.kafka.KundChangedEvent;
+import se.fk.github.rimfrost.identitetprenumeration.application.Prenumeration;
+import se.fk.github.rimfrost.identitetprenumeration.application.PrenumerationStore;
+import se.fk.github.rimfrost.identitetprenumeration.integration.kafka.KundChangedEvent;
 import se.fk.rimfrost.kund.prenumeration.KundUnsubscribeRequest;
 
 /** Integration tests for {@link KundUnsubscribeConsumer}. */

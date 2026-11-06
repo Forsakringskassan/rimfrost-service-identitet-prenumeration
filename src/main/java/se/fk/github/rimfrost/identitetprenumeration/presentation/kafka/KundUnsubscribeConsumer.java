@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.presentation.kafka;
+package se.fk.github.rimfrost.identitetprenumeration.presentation.kafka;
 
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -6,7 +6,7 @@ import jakarta.inject.Inject;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fk.github.rimfrost.kundprenumeration.application.PrenumerationStore;
+import se.fk.github.rimfrost.identitetprenumeration.application.PrenumerationStore;
 import se.fk.rimfrost.kund.prenumeration.KundUnsubscribeRequest;
 
 /**

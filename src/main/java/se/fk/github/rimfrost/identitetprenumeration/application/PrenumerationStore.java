@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.application;
+package se.fk.github.rimfrost.identitetprenumeration.application;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;

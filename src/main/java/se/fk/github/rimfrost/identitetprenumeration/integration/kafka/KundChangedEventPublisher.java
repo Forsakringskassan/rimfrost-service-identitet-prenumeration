@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.integration.kafka;
+package se.fk.github.rimfrost.identitetprenumeration.integration.kafka;
 
 import io.smallrye.reactive.messaging.kafka.api.OutgoingKafkaRecordMetadata;
 import jakarta.enterprise.context.ApplicationScoped;

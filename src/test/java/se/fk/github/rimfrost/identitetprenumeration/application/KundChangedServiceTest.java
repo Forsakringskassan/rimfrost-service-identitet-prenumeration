@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.application;
+package se.fk.github.rimfrost.identitetprenumeration.application;
 
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.ArgumentMatchers.eq;
@@ -12,8 +12,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import se.fk.github.rimfrost.kundprenumeration.integration.kafka.KundChangedEvent;
-import se.fk.github.rimfrost.kundprenumeration.integration.kafka.KundChangedEventPublisher;
+import se.fk.github.rimfrost.identitetprenumeration.integration.kafka.KundChangedEvent;
+import se.fk.github.rimfrost.identitetprenumeration.integration.kafka.KundChangedEventPublisher;
 
 /** Unit tests for {@link KundChangedService}. */
 class KundChangedServiceTest

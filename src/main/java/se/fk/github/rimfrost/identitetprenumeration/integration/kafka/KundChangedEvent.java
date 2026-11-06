@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.integration.kafka;
+package se.fk.github.rimfrost.identitetprenumeration.integration.kafka;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

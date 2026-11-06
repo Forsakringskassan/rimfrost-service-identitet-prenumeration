@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.presentation.kafka;
+package se.fk.github.rimfrost.identitetprenumeration.presentation.kafka;
 
 import io.quarkus.kafka.client.serialization.ObjectMapperDeserializer;
 import se.fk.rimfrost.kund.prenumeration.KundUnsubscribeRequest;

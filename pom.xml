@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>fk.rimfrost</groupId>
-  <artifactId>kund-prenumeration</artifactId>
+  <artifactId>identitet-prenumeration</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>

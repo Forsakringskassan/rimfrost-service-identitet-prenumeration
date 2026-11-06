@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.application;
+package se.fk.github.rimfrost.identitetprenumeration.application;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

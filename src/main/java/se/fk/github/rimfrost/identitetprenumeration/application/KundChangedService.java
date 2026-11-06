@@ -1,11 +1,11 @@
-package se.fk.github.rimfrost.kundprenumeration.application;
+package se.fk.github.rimfrost.identitetprenumeration.application;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fk.github.rimfrost.kundprenumeration.integration.kafka.KundChangedEvent;
-import se.fk.github.rimfrost.kundprenumeration.integration.kafka.KundChangedEventPublisher;
+import se.fk.github.rimfrost.identitetprenumeration.integration.kafka.KundChangedEvent;
+import se.fk.github.rimfrost.identitetprenumeration.integration.kafka.KundChangedEventPublisher;
 import se.fk.rimfrost.kund.prenumeration.Idtyp;
 
 /**

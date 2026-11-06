@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.presentation.rest;
+package se.fk.github.rimfrost.identitetprenumeration.presentation.rest;
 
 import static io.restassured.RestAssured.given;
 
@@ -8,7 +8,7 @@ import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import se.fk.github.rimfrost.kundprenumeration.application.KundChangedService;
+import se.fk.github.rimfrost.identitetprenumeration.application.KundChangedService;
 
 /** Tests for {@link TestController}. */
 @QuarkusTest

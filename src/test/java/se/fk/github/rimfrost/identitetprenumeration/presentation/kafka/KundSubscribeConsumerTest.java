@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.presentation.kafka;
+package se.fk.github.rimfrost.identitetprenumeration.presentation.kafka;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,7 +11,7 @@ import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import se.fk.github.rimfrost.kundprenumeration.application.PrenumerationStore;
+import se.fk.github.rimfrost.identitetprenumeration.application.PrenumerationStore;
 import se.fk.rimfrost.kund.prenumeration.Idtyp;
 import se.fk.rimfrost.kund.prenumeration.KundSubscribeRequest;
 

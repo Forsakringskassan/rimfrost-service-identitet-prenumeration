@@ -1,9 +1,9 @@
-package se.fk.github.rimfrost.kundprenumeration.presentation.rest;
+package se.fk.github.rimfrost.identitetprenumeration.presentation.rest;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Path;
-import se.fk.github.rimfrost.kundprenumeration.application.KundChangedService;
+import se.fk.github.rimfrost.identitetprenumeration.application.KundChangedService;
 import se.fk.rimfrost.service.kund.prenumeration.test.jaxrsspec.controllers.generatedsource.TestControllerApi;
 import se.fk.rimfrost.service.kund.prenumeration.test.jaxrsspec.controllers.generatedsource.model.TriggerRequest;
 

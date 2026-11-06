@@ -1,4 +1,4 @@
-package se.fk.github.rimfrost.kundprenumeration.application;
+package se.fk.github.rimfrost.identitetprenumeration.application;
 
 /**
  * Internal representation of an active subscription.
