@@ -9,30 +9,33 @@ import org.eclipse.microprofile.reactive.messaging.Message;
 import org.eclipse.microprofile.reactive.messaging.OnOverflow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.fk.rimfrost.identitet.uppdaterad.IdentitetUppdateradEvent;
 
 /**
- * Publishes {@link KundChangedEvent} to the replyTo-topic of each prenumerant.
+ * Publishes {@link IdentitetUppdateradEvent} to the replyTo-topic of each prenumerant (FR-02.1).
  */
 @ApplicationScoped
-public class KundChangedEventPublisher
+public class IdentitetUppdateradEventPublisher
 {
 
-   private static final Logger log = LoggerFactory.getLogger(KundChangedEventPublisher.class);
+   private static final Logger log = LoggerFactory.getLogger(IdentitetUppdateradEventPublisher.class);
 
    @Inject
-   @Channel("kund-changed-out")
+   @Channel("identitet-uppdaterad-out")
    @OnOverflow(value = OnOverflow.Strategy.FAIL)
-   Emitter<KundChangedEvent> emitter;
+   Emitter<IdentitetUppdateradEvent> emitter;
 
    /**
     * Publishes an event to the given dynamic replyTo-topic.
     *
-    * @param event   the event to publish
-    * @param replyTo the Kafka topic to publish to
+    * @param prenumerationId the client-chosen subscription ID
+    * @param replyTo         the Kafka topic to publish to
     */
-   public void publish(KundChangedEvent event, String replyTo)
+   public void publish(String prenumerationId, String replyTo)
    {
-      log.info("Publishing KundChangedEvent: prenumerationId={} replyTo={}", event.getPrenumerationId(), replyTo);
+      log.info("Publishing IdentitetUppdateradEvent: prenumerationId={} replyTo={}", prenumerationId, replyTo);
+      var event = new IdentitetUppdateradEvent();
+      event.setPrenumerationId(prenumerationId);
       var metadata = OutgoingKafkaRecordMetadata.builder().withTopic(replyTo).build();
       emitter.send(Message.of(event).addMetadata(metadata));
    }
