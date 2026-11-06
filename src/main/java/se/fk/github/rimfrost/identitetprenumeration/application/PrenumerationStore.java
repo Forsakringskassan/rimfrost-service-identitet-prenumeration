@@ -47,7 +47,7 @@ public class PrenumerationStore
    {
       return store.values().stream()
             .filter(p -> p.identiteter().stream()
-                  .anyMatch(id -> typId.equals(id.getTypId()) && varde.equals(id.getVarde())))
+                  .anyMatch(id -> typId.equals(id.typId()) && varde.equals(id.varde())))
             .toList();
    }
 }
