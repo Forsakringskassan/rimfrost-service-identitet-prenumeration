@@ -2,32 +2,29 @@ package se.fk.github.rimfrost.identitetprenumeration.presentation.rest;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Path;
-import se.fk.github.rimfrost.identitetprenumeration.application.KundChangedService;
-import se.fk.rimfrost.service.kund.prenumeration.test.jaxrsspec.controllers.generatedsource.TestControllerApi;
-import se.fk.rimfrost.service.kund.prenumeration.test.jaxrsspec.controllers.generatedsource.model.TriggerRequest;
+import se.fk.github.rimfrost.identitetprenumeration.application.IdentitetUppdateradService;
+import se.fk.rimfrost.service.identitet.prenumeration.test.jaxrsspec.controllers.generatedsource.TestControllerApi;
+import se.fk.rimfrost.service.identitet.prenumeration.test.jaxrsspec.controllers.generatedsource.model.TriggerRequest;
 
 /**
- * Implements the test endpoint for manually triggering a kundcentrerat-data-changed event.
+ * Implements the test endpoint for manually triggering an identitet-uppdaterad event.
  * Only intended for use in test and demo environments (FR-03).
  */
 @ApplicationScoped
-@Path("/test/kundcentrerat-data-changed")
 public class TestController implements TestControllerApi
 {
 
    @Inject
-   KundChangedService kundChangedService;
+   IdentitetUppdateradService identitetUppdateradService;
 
    /**
-    * Triggers a KundChangedEvent for the given idtyp/idvarde combination.
-    * Returns 204 on success, 400 if idtyp or idvarde is missing (FR-03.2).
+    * Triggers an IdentitetUppdateradEvent for the given idtyp/idvarde combination (FR-03).
     *
     * @param triggerRequest the trigger request containing idtyp and idvarde
     */
    @Override
-   public void triggerKundcentreratDataChanged(TriggerRequest triggerRequest)
+   public void triggerIdentitetDataChanged(TriggerRequest triggerRequest)
    {
-      kundChangedService.triggerKundChanged(triggerRequest.getIdtyp(), triggerRequest.getIdvarde());
+      identitetUppdateradService.triggerIdentitetUppdaterad(triggerRequest.getIdtyp(), triggerRequest.getIdvarde());
    }
 }
