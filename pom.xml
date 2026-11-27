@@ -9,7 +9,7 @@
   </parent>
 
   <groupId>fk.rimfrost</groupId>
-  <artifactId>identitet-prenumeration</artifactId>
+  <artifactId>rimfrost-service-identitet-prenumeration</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
