@@ -2,6 +2,14 @@
 
 Changelog of rimfrost-service-identitet-prenumeration.
 
+## 0.0.4 (2026-11-27)
+
+### Bug Fixes
+
+-  image name to contain rimfrost-service- ([43657](https://github.com/Forsakringskassan/rimfrost-service-identitet-prenumeration/commit/4365796e574ced3) Nils Elveros)  
+
+## rimfrost-1_3 (2026-11-12)
+
 ## 0.0.3 (2026-11-10)
 
 ### Bug Fixes
